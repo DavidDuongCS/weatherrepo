@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 style="margin: 40px;">{{vars["name"]}}, {{vars["country"]}} (UTC/GMT {{vars["hourShift"]}} hours)</h1>
+<div class="container">
+    <div class="row text-center">
+        <div class="col-sm-4 offset-sm-1 left-box">
+            <img src="{{vars['iconLink']}}">
+            <h2>{{"%.1f"|format(vars["temp"])}}°C</h2>
+            <h2>{{vars["description"]}}</h2>
+            <p>Feels Like {{"%.1f"|format(vars["feelsLike"])}}°C</p>
+            <p>Minimum: {{"%.1f"|format(vars["min"])}}°C</p>
+            <p>Maximum: {{"%.1f"|format(vars["max"])}}°C</p>
+        </div>
+        <div class="col-sm-6 right-box">
+            <p>Humidity: {{vars["humidity"]}}%</p>
+            <div class="row">
+                <div class="col-sm-8 offset-sm-2">
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{vars['humidity']}}%" aria-valuenow="{{vars['humidity']}}" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+            <p>Cloudiness: {{vars["cloudiness"]}}%</p>
+            <div class="row">
+                <div class="col-sm-8 offset-sm-2">
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{vars['cloudiness']}}%" aria-valuenow="{{vars['cloudiness']}}" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+            <p>Wind Speed: {{"%.1f"|format(vars["windSpeed"])}} km/h</p>
+            <p>Pressure: {{"%.1f"|format(vars["pressure"])}} kPa</p>
+            <p>Visibility: {{"%.1f"|format(vars["visibility"])}} km</p>
+            <br>
+            <p>Sunrise: {{vars["sunrise"]}}</p>
+            <p>Sunset: {{vars["sunset"]}}</p>
+        </div>
+    </div>
+</div>
+<footer>
+    <p style="padding: 5px;">Weather was calculated on <strong>{{vars["dataCalculation"]}}</strong></p>
+</footer>
+{% endblock %}
