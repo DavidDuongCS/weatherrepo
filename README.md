@@ -6,4 +6,4 @@ Example Screenshot:
 
 ![image](https://github.com/DavidDuongCS/weatherrepo/assets/68204332/8c7dc780-149d-4355-b8f0-ca77987a6722)
 
-You can check the website out on weatherrepo.pythonanywhere.com.
+You can check the website out on www.weatherrepo.pythonanywhere.com.
